@@ -38,7 +38,7 @@ interface CartTitleProps extends React.ComponentProps<"h6"> {
 
 const CartTitle = ({ children, className, ...props }: CartTitleProps) => {
   return (
-    <h6 className={tw(`caption-sm md:caption-md ${className}`)} {...props}>
+    <h6 className={tw(`caption-sm md:caption-md truncate ${className}`)} {...props}>
       {children}
     </h6>
   );
