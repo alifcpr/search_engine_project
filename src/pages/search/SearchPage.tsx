@@ -5,11 +5,13 @@ import { useSearchParams } from "react-router-dom";
 import LinksLoading from "@/components/loading/LinksLoading";
 import LinkCart from "@/components/carts/LinkCart";
 import { v4 as uuidv4 } from "uuid";
+import useTitle from "@/hooks/useTitle";
 
 const SearchPage = () => {
   // search params
   const [params] = useSearchParams();
   const searchQuery = params.get("q");
+  useTitle(searchQuery!);
 
   // api data , loading , error state
   const [data, setData] = useState<TRelatedTopic[]>([]);
