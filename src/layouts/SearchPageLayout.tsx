@@ -5,7 +5,7 @@ const SearchPageLayout = () => {
   return (
     <>
       <Header />
-      <div>
+      <div className="max-w-sm  mx-auto md:max-w-2xl lg:max-w-4xl xl:max-w-[1200px] 2xl:max-w-[1700px]">
         <Outlet />
       </div>
     </>

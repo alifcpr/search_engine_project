@@ -36,7 +36,7 @@ const SearchPage = () => {
   }, [searchQuery]);
 
   return (
-    <div className="max-w-sm  mx-auto md:max-w-2xl lg:max-w-4xl xl:max-w-[1200px] 2xl:max-w-[1700px] px-2">
+    <div className="px-2">
       <h1 className="body-md mt-4">نتایج جستجو برای : "{searchQuery}"</h1>
       <div className="mt-10">
         {isLoading && !isError && <LinksLoading />}
