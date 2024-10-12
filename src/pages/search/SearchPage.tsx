@@ -3,6 +3,8 @@ import { TRelatedTopic } from "@/types";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import LinksLoading from "@/components/loading/LinksLoading";
+import LinkCart from "@/components/carts/LinkCart";
+import { v4 as uuidv4 } from "uuid";
 
 const SearchPage = () => {
   // search params
@@ -51,7 +53,11 @@ const SearchPage = () => {
               </ul>
             </>
           ) : (
-            <p>ok</p>
+            <div className="flex flex-col gap-y-6">
+              {data.map((item: TRelatedTopic) => (
+                <LinkCart data={item} key={uuidv4()} />
+              ))}
+            </div>
           ))}
       </div>
     </div>

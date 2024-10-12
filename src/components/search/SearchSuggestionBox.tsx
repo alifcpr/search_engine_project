@@ -16,7 +16,7 @@ const SearchSuggestionsBox = ({
   suggestionCartClassName,
 }: SearchSuggestionsProps) => {
   // input state and suggestion box state
-  const { value, isOpen, setIsOpen } = useSearch();
+  const { value, isOpen, setIsOpen, setValue } = useSearch();
 
   // list of suggestions state
   const [suggestions, setSuggestions] = useState<TSuggestion[]>([]);
@@ -57,8 +57,9 @@ const SearchSuggestionsBox = ({
     );
   };
 
-  // handle close the suggestion box
-  const handleCloseBox = () => {
+  // setValue for input and close after that
+  const handleCloseBox = (text: string) => {
+    setValue(text);
     setIsOpen(false);
   };
 
@@ -83,7 +84,7 @@ const SearchSuggestionsBox = ({
             <Link
               to={`/search?q=${item.phrase}`}
               className="py-2 px-3 block w-full"
-              onClick={handleCloseBox}
+              onClick={() => handleCloseBox(item.phrase)}
             >
               {highlightText(item.phrase, value)}
             </Link>
