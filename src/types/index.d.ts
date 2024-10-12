@@ -79,7 +79,7 @@ export interface Meta {
   unsafe: number;
 }
 
-export interface TWikipediaResponse {
+export interface TSerachResultResponse {
   Abstract: string;
   AbstractSource: string;
   AbstractText: string;
