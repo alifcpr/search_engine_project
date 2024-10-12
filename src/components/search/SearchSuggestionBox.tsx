@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import useClickOutside from "@/hooks/useClickOutside";
 import { TSuggestion } from "@/types";
 import { useSearch } from "@/providers/SearchProvider";
+import { v4 as uuidv4 } from "uuid";
 
 interface SearchSuggestionsProps {
   containerClassName?: string;
@@ -50,7 +51,7 @@ const SearchSuggestionsBox = ({
     const splittedText = text.split(new RegExp(`(${highlight})`, "gi"));
     return splittedText.map((part: string) =>
       part.toLowerCase() === highlight.toLowerCase() ? (
-        <span className="font-bold">{part}</span>
+        <span key={uuidv4()} className="font-bold">{part}</span>
       ) : (
         part
       )
@@ -77,6 +78,7 @@ const SearchSuggestionsBox = ({
       <ul>
         {suggestions.map((item) => (
           <li
+            key={uuidv4()}
             className={tw(
               `rounded-md w-full body-sm md:body-md hover:bg-slate-100 cursor-pointer ${suggestionCartClassName}`
             )}
