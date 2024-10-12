@@ -33,8 +33,7 @@ const SearchBox = ({
 
   // handle redirect user to /search page
   const handleRedirectUser = () => {
-    if (value.length === 0)
-      return toast.error("You did not enter any text in the search!");
+    if (value.length === 0) return toast.error("مقدار جستجو نباید خالی باشد !");
     navigate(`/search?q=${value}`);
   };
 
