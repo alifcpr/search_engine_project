@@ -1,5 +1,5 @@
-import SearchSuggestionsBox from "@/components/SearchSuggestionBox";
-import SearchBox from "@/components/SerachBox";
+import SearchSuggestionsBox from "@/components/search/SearchSuggestionBox";
+import SearchBox from "@/components/search/SerachBox";
 import SearchProvider from "@/providers/SearchProvider";
 
 const HomePage = () => {
@@ -11,7 +11,7 @@ const HomePage = () => {
             جستجویار
           </h1>
           <SearchBox />
-          <SearchSuggestionsBox containerClassName="top-32"/>
+          <SearchSuggestionsBox containerClassName="top-32" />
         </SearchProvider>
       </div>
     </div>

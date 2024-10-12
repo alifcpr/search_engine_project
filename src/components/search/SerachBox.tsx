@@ -3,7 +3,7 @@ import { twMerge as tw } from "tailwind-merge";
 import { IoIosSearch } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import { useSearch } from "../providers/SearchProvider";
+import { useSearch } from "../../providers/SearchProvider";
 
 interface SearchBoxProps {
   inputClassName?: string;
